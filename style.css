@@ -1,0 +1,313 @@
+/* ==========================================================================
+   RESET & DASAR
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Membatasi lebar tampilan maksimal seukuran layar HP di Desktop/Tablet */
+.app-container {
+    width: 100%;
+    max-width: 480px;
+    background-color: #ffffff;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.app-header {
+    background-color: #1a252c;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.brand p {
+    font-size: 0.75rem;
+    color: #a0aec0;
+    margin-top: 2px;
+}
+
+.table-info {
+    background-color: #e28743;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   KONTEN & TAMPILAN VIEW
+   ========================================================================== */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Sembunyikan view secara default */
+.view {
+    display: none;
+}
+
+/* Tampilkan view yang aktif */
+.view.active {
+    display: block;
+}
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    font-size: 1.25rem;
+    color: #1a252c;
+}
+
+.section-title p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* ==========================================================================
+   KARTU TENANT (TENANT CARDS)
+   ========================================================================== */
+.tenant-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tenant-card {
+    border: 1px solid #eef2f5;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tenant-card:active {
+    transform: scale(0.98);
+}
+
+.tenant-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    background-color: #eee;
+}
+
+.tenant-body {
+    padding: 16px;
+}
+
+.tenant-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a252c;
+}
+
+.tenant-desc {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 6px 0 14px 0;
+    line-height: 1.4;
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: #02a407;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   HALAMAN MENU TENANT & FILTER
+   ========================================================================== */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: #02a407;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.tenant-header-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: #f8fafc;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+.tenant-header-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.tenant-header-info h2 {
+    font-size: 1.1rem;
+}
+
+.tenant-header-info p {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+/* Filter Pencarian dan Kategori */
+.filter-container {
+    margin-bottom: 20px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    outline: none;
+    margin-bottom: 12px;
+}
+
+#search-input:focus {
+    border-color: #e28743;
+}
+
+.category-pills {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    /* Menyembunyikan scrollbar bawaan */
+    scrollbar-width: none;
+}
+
+.category-pills::-webkit-scrollbar {
+    display: none;
+}
+
+.pill {
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+}
+
+.pill.active {
+    background-color: #1a252c;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   KARTU PRODUK / MENU
+   ========================================================================== */
+.product-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.product-card {
+    display: flex;
+    gap: 12px;
+    border: 1px solid #edf2f7;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.product-img {
+    width: 85px;
+    height: 85px;
+    border-radius: 8px;
+    object-fit: cover;
+    background-color: #eee;
+}
+
+.product-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1a252c;
+}
+
+.product-desc {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-price {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #e28743;
+    margin-top: 6px;
+}
+
+/* FOOTER */
+.app-footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    border-top: 1px solid #f1f5f9;
+    margin-top: auto;
+}
